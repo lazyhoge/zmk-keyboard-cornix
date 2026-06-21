@@ -310,10 +310,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp ESCAPE      &kp NON_US_BACKSLASH  &none   &none     &none       &none                      &none          &kp CARET      &kp GRAVE       &shift_brace        &kp ASTERISK     &kp SLASH
-&kp LEFT_SHIFT  &kp EXCL              &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                  &kp AMPERSAND  &kp AMPERSAND  &kp APOSTROPHE  &shift_Parenthesis  &kp PLUS         &kp TILDE
-&none           &none                 &none   &none     &none       &none      &trans  &trans  &kp PIPE       &kp PIPE       &kp GRAVE       &shift_bracket      &kp EXCLAMATION  &none
-&none           &none                 &none   &trans    &trans      &trans                     &trans         &trans         &mo 3           &shift_than         &none            &none
+&kp ESCAPE      &kp NON_US_BACKSLASH  &none   &none     &none       &none                      &none      &kp CARET      &kp GRAVE       &shift_brace        &kp ASTERISK     &kp SLASH
+&kp LEFT_SHIFT  &kp EXCL              &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                  &kp EQUAL  &kp AMPERSAND  &kp APOSTROPHE  &shift_Parenthesis  &kp PLUS         &kp TILDE
+&none           &none                 &none   &none     &none       &none      &trans  &trans  &none      &kp PIPE       &kp GRAVE       &shift_bracket      &kp EXCLAMATION  &none
+&none           &none                 &none   &trans    &trans      &trans                     &trans     &trans         &mo 3           &shift_than         &none            &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
