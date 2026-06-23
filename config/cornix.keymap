@@ -179,40 +179,40 @@
             mods = <(MOD_LSFT)>;
         };
 
-        shift_up: shift_up {
+        Ctrl_up: Ctrl_up {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_UP";
+            label = "CTRL_UP";
             bindings = <&kp UP_ARROW>, <&kp PAGE_UP>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LCTL)>;
         };
 
-        shift_down: shift_down {
+        Ctrl_down: Ctrl_down {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_DOWN";
+            label = "CTRL_DOWN";
             bindings = <&kp DOWN_ARROW>, <&kp PAGE_DOWN>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LCTL)>;
         };
 
-        shift_left: shift_left {
+        Ctrl_left: Ctrl_left {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_LEFT";
+            label = "CTRL_LEFT";
             bindings = <&kp LEFT_ARROW>, <&kp HOME>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LCTL)>;
         };
 
-        shift_right: shift_right {
+        Ctrl_right: Ctrl_right {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_RIGHT";
+            label = "CTRL_RIGHT";
             bindings = <&kp RIGHT_ARROW>, <&kp END>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LCTL)>;
         };
     };
 
@@ -315,10 +315,10 @@
         Navi_layer {
             display-name = "Navi";
             bindings = <
-&none            &none         &mkp MB1        &mmv MOVE_UP    &mkp MB3         &msc SCRL_UP                  &none   &none        &shift_up    &none         &none  &none
-&none            &none         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN                &none   &shift_left  &shift_down  &shift_right  &none  &kp LEFT_SHIFT
-&trans           &none         &none           &none           &none            &none           &none  &none  &none   &none        &none        &none         &none  &none
-&kp K_SCROLL_UP  &kp CAPSLOCK  &none           &trans          &trans           &trans                        &trans  &trans       &trans       &none         &none  &none
+&none            &none         &mkp MB1        &mmv MOVE_UP    &mkp MB3         &msc SCRL_UP                  &none   &none       &Ctrl_up    &none        &none  &none
+&none            &none         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN                &none   &Ctrl_left  &Ctrl_down  &Ctrl_right  &none  &kp LCTRL
+&trans           &none         &none           &none           &none            &none           &none  &none  &none   &none       &none       &none        &none  &none
+&kp K_SCROLL_UP  &kp CAPSLOCK  &none           &trans          &trans           &trans                        &trans  &trans      &trans      &none        &none  &none
             >;
         };
 
