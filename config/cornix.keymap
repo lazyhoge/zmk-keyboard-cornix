@@ -293,8 +293,8 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp ESCAPE  &kp NON_US_BACKSLASH  &none   &none     &none       &none                      &none      &kp CARET      &kp GRAVE       &shift_bracket      &kp ASTERISK     &kp SLASH
-&trans      &kp EXCL              &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                  &kp EQUAL  &kp AMPERSAND  &kp APOSTROPHE  &shift_Parenthesis  &kp PLUS         &kp TILDE
+&kp ESCAPE  &kp NON_US_BACKSLASH  &none   &none     &none       &none                      &none      &kp CARET      &kp GRAVE       &shift_bracket      &kp KP_MULTIPLY  &kp KP_DIVIDE
+&trans      &kp EXCL              &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                  &kp EQUAL  &kp AMPERSAND  &kp APOSTROPHE  &shift_Parenthesis  &kp KP_PLUS      &kp KP_MINUS
 &trans      &none                 &none   &none     &none       &none      &trans  &trans  &none      &kp PIPE       &kp GRAVE       &shift_brace        &kp EXCLAMATION  &none
 &none       &none                 &none   &trans    &trans      &trans                     &trans     &trans         &trans          &shift_than         &none            &none
             >;
