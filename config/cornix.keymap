@@ -283,10 +283,10 @@
 
         num {
             bindings = <
-&kp ESCAPE  &kp F9  &kp F10  &kp F11  &kp F12  &kp F13                &kp KP_NUMLOCK  &kp KP_N7  &kp KP_N8  &mt LEFT_BRACE KP_N9        &mt RIGHT_BRACE ASTERISK       &kp SLASH
-&trans      &kp F5  &kp F6   &kp F7   &kp F8   &kp F14                &none           &kp KP_N4  &kp KP_N5  &mt LEFT_PARENTHESIS KP_N6  &mt RIGHT_PARENTHESIS KP_PLUS  &kp KP_MINUS
-&trans      &kp F1  &kp F2   &kp F3   &kp F4   &kp F15  &none  &none  &none           &kp KP_N1  &kp KP_N2  &mt LBKT KP_N3              &mt RIGHT_BRACKET KP_ENTER     &none
-&none       &trans  &trans   &trans   &trans   &trans                 &trans          &trans     &kp KP_N0  &kp KP_DOT                  &none                          &none
+&kp ESCAPE  &kp F9  &kp F10  &kp F11  &kp F12  &kp F13                &kp KP_NUMLOCK  &kp KP_N7  &kp KP_N8  &kp KP_NUMBER_9  &kp ASTERISK  &kp SLASH
+&trans      &kp F5  &kp F6   &kp F7   &kp F8   &kp F14                &none           &kp KP_N4  &kp KP_N5  &kp KP_NUMBER_6  &kp KP_PLUS   &kp KP_MINUS
+&trans      &kp F1  &kp F2   &kp F3   &kp F4   &kp F15  &none  &none  &none           &kp KP_N1  &kp KP_N2  &kp KP_NUMBER_3  &kp KP_ENTER  &none
+&none       &trans  &trans   &trans   &trans   &trans                 &trans          &trans     &kp KP_N0  &kp KP_DOT       &none         &none
             >;
         };
 
@@ -355,6 +355,15 @@
 &none        &none  &none  &none                  &none  &none                               &none  &none  &none  &kp K_SCREENSAVER  &none             &none
 &none        &none  &none  &kp K_CALCULATOR       &none  &none                 &none  &none  &none  &none  &none  &none              &none             &none
 &none        &none  &none  &none                  &none  &none                               &none  &none  &none  &none              &none             &none
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
