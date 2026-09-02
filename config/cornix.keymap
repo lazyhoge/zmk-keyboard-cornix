@@ -283,10 +283,10 @@
 
         num {
             bindings = <
-&kp ESCAPE  &kp F9  &kp F10  &kp F11  &kp F12  &kp F13                &kp KP_NUMLOCK  &kp KP_N7  &kp KP_N8  &kp KP_NUMBER_9  &kp ASTERISK  &kp SLASH
-&trans      &kp F5  &kp F6   &kp F7   &kp F8   &kp F14                &none           &kp KP_N4  &kp KP_N5  &kp KP_NUMBER_6  &kp KP_PLUS   &kp KP_MINUS
-&trans      &kp F1  &kp F2   &kp F3   &kp F4   &kp F15  &none  &none  &none           &kp KP_N1  &kp KP_N2  &kp KP_NUMBER_3  &kp KP_ENTER  &none
-&none       &trans  &trans   &trans   &trans   &trans                 &trans          &trans     &kp KP_N0  &kp KP_DOT       &none         &none
+&kp ESCAPE  &none         &none         &none         &none         &none                 &kp KP_NUMLOCK  &kp KP_N7  &kp KP_N8  &kp KP_NUMBER_9  &kp ASTERISK  &kp SLASH
+&trans      &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0                &none           &kp KP_N4  &kp KP_N5  &kp KP_NUMBER_6  &kp KP_PLUS   &kp KP_MINUS
+&trans      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &none  &none  &none           &kp KP_N1  &kp KP_N2  &kp KP_NUMBER_3  &kp KP_ENTER  &none
+&none       &trans        &trans        &trans        &trans        &trans                &trans          &trans     &kp KP_N0  &kp KP_DOT       &none         &none
             >;
         };
 
@@ -314,10 +314,10 @@
         Navi_layer {
             display-name = "Navi";
             bindings = <
-&kp ESCAPE  &none            &none   &none     &none       &none                      &none   &none           &kp UP_ARROW    &none            &none  &none
-&trans      &kp EXCLAMATION  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
-&trans      &none            &none   &none     &none       &none        &none  &none  &none   &none           &none           &none            &none  &none
-&trans      &trans           &none   &trans    &mo 5       &trans                     &trans  &trans          &trans          &none            &none  &none
+&kp ESCAPE  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15                &none   &none           &kp UP_ARROW    &none            &none  &none
+&trans      &kp F6   &kp F7   &kp F8   &kp F9   &kp F10                &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
+&trans      &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &none  &none  &none   &none           &none           &none            &none  &none
+&trans      &trans   &none    &mo 5    &trans   &trans                 &trans  &trans          &trans          &none            &none  &none
             >;
         };
 
