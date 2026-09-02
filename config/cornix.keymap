@@ -302,10 +302,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp ESCAPE  &kp NON_US_BACKSLASH  &none   &none     &none       &none                      &none      &kp CARET      &kp GRAVE       &shift_bracket      &kp KP_MULTIPLY  &kp KP_DIVIDE
-&trans      &kp EXCL              &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                  &kp EQUAL  &kp AMPERSAND  &kp APOSTROPHE  &shift_Parenthesis  &kp KP_PLUS      &kp KP_MINUS
-&trans      &none                 &none   &none     &none       &none      &trans  &trans  &none      &kp PIPE       &kp GRAVE       &shift_brace        &kp EXCLAMATION  &none
-&trans      &trans                &trans  &trans    &trans      &trans                     &trans     &trans         &trans          &shift_than         &none            &none
+&kp ESCAPE  &none     &none   &none     &none       &none                      &none      &kp CARET      &kp GRAVE       &shift_bracket      &kp KP_MULTIPLY  &kp KP_DIVIDE
+&trans      &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                  &kp EQUAL  &kp AMPERSAND  &kp APOSTROPHE  &shift_Parenthesis  &kp KP_PLUS      &kp KP_MINUS
+&trans      &none     &none   &none     &none       &none      &trans  &trans  &none      &kp PIPE       &kp GRAVE       &shift_brace        &kp BACKSLASH    &none
+&trans      &trans    &trans  &trans    &trans      &trans                     &trans     &trans         &trans          &shift_than         &none            &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -314,7 +314,7 @@
         Navi_layer {
             display-name = "Navi";
             bindings = <
-&kp ESCAPE  &kp BACKSLASH    &none   &none     &none       &none                      &none   &none           &kp UP_ARROW    &none            &none  &none
+&kp ESCAPE  &none            &none   &none     &none       &none                      &none   &none           &kp UP_ARROW    &none            &none  &none
 &trans      &kp EXCLAMATION  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT                &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
 &trans      &none            &none   &none     &none       &none        &none  &none  &none   &none           &none           &none            &none  &none
 &trans      &trans           &none   &trans    &mo 5       &trans                     &trans  &trans          &trans          &none            &none  &none
