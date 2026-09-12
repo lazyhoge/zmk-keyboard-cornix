@@ -317,7 +317,7 @@
 &kp ESCAPE  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15                &none   &none           &kp UP_ARROW    &none            &none  &none
 &trans      &kp F6   &kp F7   &kp F8   &kp F9   &kp F10                &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none  &none
 &trans      &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &none  &none  &none   &none           &none           &none            &none  &none
-&trans      &trans   &none    &mo 5    &trans   &trans                 &trans  &trans          &trans          &none            &none  &none
+&trans      &trans   &none    &trans   &mo 5    &trans                 &trans  &trans          &trans          &none            &none  &none
             >;
         };
 
