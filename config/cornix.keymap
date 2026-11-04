@@ -214,6 +214,17 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
         };
+
+        // Hold for 1 s to clear the bond of the active profile; a tap does nothing.
+        // Keeps BT_CLR from firing on a stray press next to BT_SEL.
+        bt_clr_hold: bt_clr_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&bt>, <&none>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = <1000>;
+        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -341,17 +352,15 @@
         Adjust_layer {
             display-name = "Adjust";
 
-            // ----------------------------------------------------------------------------------------------------------------------------
-            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-            // | moDEBUG| RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-            // | EXTPWR | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-            //                    |         |         |         |         |         | |      |      |      |       |      |
+            // Hold mo 6 (bottom-left corner) or press num + Symbols with the left thumb.
+            // Profiles: 0 = this PC (hm-wks-01), 1 = Galaxy Z Fold5, 2 = work laptop.
+            // | CLR(1s) | BT0  | BT1  | BT2  | BT3  | BT4  |   |       |       |       |       | EXTPWR |      |
+            // |         | DIS0 | DIS1 | DIS2 | DIS3 | DIS4 |   | TO 0  | BT0   | BT1   | BT2   | BT3    | BT4  |
 
             bindings = <
-&bt BT_CLR      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &none  &none  &none  &none  &ext_power EP_TOG  &none
-&none           &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &none  &to 0  &none  &none  &none              &none
-&bt BT_CLR_ALL  &none          &none          &none          &none          &none          &trans  &trans  &none  &none  &none  &none  &none              &none
+&bt_clr_hold BT_CLR_CMD 0  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &none   &none          &none          &none          &ext_power EP_TOG  &none
+&none                      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &to 0   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3       &bt BT_SEL 4
+&none                      &none          &none          &none          &none          &none          &trans  &trans  &none   &none          &none          &none          &none              &none
 &none           &none          &none          &none          &none          &none                          &none  &none  &none  &none  &none              &none
             >;
         };
