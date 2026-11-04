@@ -238,6 +238,13 @@
             key-positions = <21 19>;
             layers = <0>;
         };
+
+        // Left thumb: num (lt 2 ESC) + Symbols (mo 3) together holds Adjust.
+        adjust_thumbs {
+            bindings = <&mo 6>;
+            key-positions = <41 42>;
+            layers = <0>;
+        };
     };
 
     macros {
