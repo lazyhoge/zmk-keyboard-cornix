@@ -354,12 +354,12 @@
 
             // Hold mo 6 (bottom-left corner) or press num + Symbols with the left thumb.
             // Profiles: 0 = this PC (hm-wks-01), 1 = Galaxy Z Fold5, 2 = work laptop.
-            // | CLR(1s) | BT0  | BT1  | BT2  | BT3  | BT4  |   |       |       |       |       | EXTPWR |      |
-            // |         | DIS0 | DIS1 | DIS2 | DIS3 | DIS4 |   | TO 0  | BT0   | BT1   | BT2   | BT3    | BT4  |
+            // | CLR(1s) | BT0  | BT1  | BT2  | BT3  | BT4  |   | TO 0  |       |       |       | EXTPWR |      |
+            // |         | DIS0 | DIS1 | DIS2 | DIS3 | DIS4 |   | BT0   | BT1   | BT2   | BT3   | BT4    |      |
 
             bindings = <
-&bt_clr_hold BT_CLR_CMD 0  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &none   &none          &none          &none          &ext_power EP_TOG  &none
-&none                      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &to 0   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3       &bt BT_SEL 4
+&bt_clr_hold BT_CLR_CMD 0  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &to 0          &none          &none          &none          &ext_power EP_TOG  &none
+&none                      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4       &none
 &none                      &none          &none          &none          &none          &none          &trans  &trans  &none   &none          &none          &none          &none              &none
 &none           &none          &none          &none          &none          &none                          &none  &none  &none  &none  &none              &none
             >;
