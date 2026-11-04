@@ -37,6 +37,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 / {
@@ -259,6 +260,13 @@
     };
 
     macros {
+        // Send to Bluetooth and select profile N in one press, even while USB is plugged in.
+        bt_ble: bt_ble {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&out OUT_BLE>, <&macro_param_1to2>, <&bt BT_SEL_CMD MACRO_PLACEHOLDER>;
+        };
+
         printscreen_win: printscreen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -355,11 +363,12 @@
             // Hold mo 6 (bottom-left corner) or press num + Symbols with the left thumb.
             // Profiles: 0 = this PC (hm-wks-01), 1 = Galaxy Z Fold5, 2 = work laptop.
             // | CLR(1s) | BT0  | BT1  | BT2  | BT3  | BT4  |   | TO 0  |       |       |       | EXTPWR |      |
-            // |         | DIS0 | DIS1 | DIS2 | DIS3 | DIS4 |   | BT0   | BT1   | BT2   | BT3   | BT4    |      |
+            // |         | DIS0 | DIS1 | DIS2 | DIS3 | DIS4 |   | BLE0  | BLE1  | BLE2  | BLE3  | BLE4   | USB  |
+            // BLEn = output to Bluetooth and select profile n. USB = output to USB. The left BTn only selects the profile.
 
             bindings = <
 &bt_clr_hold BT_CLR_CMD 0  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &to 0          &none          &none          &none          &ext_power EP_TOG  &none
-&none                      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4       &none
+&none                      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &bt_ble 0      &bt_ble 1      &bt_ble 2      &bt_ble 3      &bt_ble 4          &out OUT_USB
 &none                      &none          &none          &none          &none          &none          &trans  &trans  &none   &none          &none          &none          &none              &none
 &none           &none          &none          &none          &none          &none                          &none  &none  &none  &none  &none              &none
             >;
