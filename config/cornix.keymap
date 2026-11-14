@@ -218,6 +218,7 @@
 
         // Hold for 1 s to clear the bond of the active profile; a tap does nothing.
         // Keeps BT_CLR from firing on a stray press next to BT_SEL.
+
         bt_clr_hold: bt_clr_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -252,19 +253,51 @@
         };
 
         // Left thumb: num (lt 2 ESC) + Symbols (mo 3) together holds Adjust.
+
         adjust_thumbs {
             bindings = <&mo 6>;
             key-positions = <41 42>;
             layers = <0>;
         };
+
+        gui_right {
+            bindings = <&kp RIGHT_GUI>;
+            key-positions = <21 46>;
+        };
+
+        gui_left {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <41 14>;
+        };
+
+        ctrl_right {
+            bindings = <&kp LCTRL>;
+            key-positions = <45 21>;
+        };
+
+        ctrl_left {
+            bindings = <&kp LCTRL>;
+            key-positions = <42 14>;
+        };
+
+        alt_right {
+            bindings = <&kp RIGHT_ALT>;
+            key-positions = <44 21>;
+        };
+
+        alt_left {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <14 43>;
+        };
     };
 
     macros {
         // Send to Bluetooth and select profile N in one press, even while USB is plugged in.
+
         bt_ble: bt_ble {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&out OUT_BLE>, <&macro_param_1to2>, <&bt BT_SEL_CMD MACRO_PLACEHOLDER>;
+            bindings = <&out OUT_BLE &macro_param_1to2 &bt BT_SEL_CMD MACRO_PLACEHOLDER>;
         };
 
         printscreen_win: printscreen {
@@ -309,10 +342,10 @@
 
         num {
             bindings = <
-&kp ESCAPE  &kp DOLLAR      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL        &none                         &kp KP_NUMLOCK  &kp KP_N7  &kp KP_N8  &kp KP_NUMBER_9  &kp ASTERISK  &kp SLASH
-&trans      &kp UNDERSCORE  &kp CARET             &kp LEFT_BRACE         &kp RIGHT_BRACE  &kp BACKSLASH                 &none           &kp KP_N4  &kp KP_N5  &kp KP_NUMBER_6  &kp KP_PLUS   &kp KP_MINUS
+&kp ESCAPE  &kp DOLLAR      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL        &none                        &kp KP_NUMLOCK  &kp KP_N7  &kp KP_N8  &kp KP_NUMBER_9  &kp ASTERISK  &kp SLASH
+&trans      &kp UNDERSCORE  &kp CARET             &kp LEFT_BRACE         &kp RIGHT_BRACE  &kp BACKSLASH                &none           &kp KP_N4  &kp KP_N5  &kp KP_NUMBER_6  &kp KP_PLUS   &kp KP_MINUS
 &trans      &kp AMPERSAND   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none            &none          &none  &none  &none           &kp KP_N1  &kp KP_N2  &kp KP_NUMBER_3  &kp KP_ENTER  &none
-&none       &trans        &trans        &trans        &trans        &trans                &trans          &trans     &kp KP_N0  &kp KP_DOT       &none         &none
+&none       &trans          &trans                &trans                 &trans           &trans                       &trans          &trans     &kp KP_N0  &kp KP_DOT       &none         &none
             >;
         };
 
@@ -367,10 +400,10 @@
             // BLEn = output to Bluetooth and select profile n. USB = output to USB. The left BTn only selects the profile.
 
             bindings = <
-&bt_clr_hold BT_CLR_CMD 0  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &to 0          &none          &none          &none          &ext_power EP_TOG  &none
-&none                      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &bt_ble 0      &bt_ble 1      &bt_ble 2      &bt_ble 3      &bt_ble 4          &out OUT_USB
-&none                      &none          &none          &none          &none          &none          &trans  &trans  &none   &none          &none          &none          &none              &none
-&none           &none          &none          &none          &none          &none                          &none  &none  &none  &none  &none              &none
+&bt_clr_hold BT_CLR_CMD 0  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &to 0      &none      &none      &none      &ext_power EP_TOG  &none
+&none                      &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &bt_ble 0  &bt_ble 1  &bt_ble 2  &bt_ble 3  &bt_ble 4          &out OUT_USB
+&none                      &none          &none          &none          &none          &none          &trans  &trans  &none      &none      &none      &none      &none              &none
+&none                      &none          &none          &none          &none          &none                          &none      &none      &none      &none      &none              &none
             >;
         };
 
